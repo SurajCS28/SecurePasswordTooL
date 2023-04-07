@@ -13,20 +13,10 @@ password.addEventListener("keyup", function () {
     checkStrength(pass);
 });
 
-function toggle() {
-    if (state) {
-        document.getElementById("password").setAttribute("type", "password");
-        state = false;
-    } else {
-        document.getElementById("password").setAttribute("type", "text")
-        state = true;
-    }
-}
 
-
-function myFunction(show) {
-    show.classList.toggle("fa-eye-slash");
-}
+// Define a function to check the strength of the password and update the strength bar and indicators accordingly
+// It also checks for the presence of lowercase and uppercase letters, numbers, and special characters in the password.
+// If the password is weak, the strength bar is red, if it is medium, the strength bar is yellow, and if it is strong, the strength bar is green.
 
 function checkStrength(password) {
     let strength = 0;
@@ -67,27 +57,32 @@ function checkStrength(password) {
         eightChar.classList.add('fa-circle');
         eightChar.classList.remove('fa-check');
     }
-    
-if (strength ==1 ) {
+ // This section sets the progress bar's width and color based on the password strength  
+ // If password strength is 0, set progress bar to red with width 10%
+if (strength == 0 ) {
     pwdstrength.classList.remove('progress-bar-warning');
     pwdstrength.classList.remove('progress-bar-success');
     pwdstrength.classList.add('progress-bar-danger');
     pwdstrength.style = 'width: 10%';
-}else if (strength == 2) {
+    // If password strength is 1, set progress bar to red with width 35%
+}else if (strength == 1) {
     pwdstrength.classList.remove('progress-bar-warning');
     pwdstrength.classList.remove('progress-bar-success');
     pwdstrength.classList.add('progress-bar-danger');
     pwdstrength.style = 'width: 35%';
+    // If password strength is 2, set progress bar to red with width 50%
 } else if (strength == 2) {
     pwdstrength.classList.remove('progress-bar-warning');
     pwdstrength.classList.remove('progress-bar-success');
     pwdstrength.classList.add('progress-bar-danger');
     pwdstrength.style = 'width: 50%';
+    // If password strength is 3, set progress bar to yellow with width 75%
 } else if (strength == 3) {
     pwdstrength.classList.remove('progress-bar-success');
     pwdstrength.classList.remove('progress-bar-danger');
     pwdstrength.classList.add('progress-bar-warning');
     pwdstrength.style = 'width: 75%';
+    // If password strength is 4, set progress bar to green with width 100%
 } else if (strength == 4) {
     pwdstrength.classList.remove('progress-bar-warning');
     pwdstrength.classList.remove('progress-bar-danger');
