@@ -1,5 +1,6 @@
 /* SURAJ C S 20BCE1678 CYBERSEC JCOMP */
 
+/* This sets the font-family to Montserrat for the entire body of the HTML page and sets the background size to cover */
 body {
     font-family: 'Montserrat';
    
@@ -46,6 +47,7 @@ input[type=text]:focus{
     text-align: left !important;
     padding-bottom: 4px;
 }
+/* This sets the height and background color of the progress bar */
 .progress {
     height: 3px !important;
     background-color: #dcdcdc;
@@ -63,6 +65,9 @@ input[type=text]:focus{
     right: 8%;
     
 }
+
+/* This sets the height and background color of the progress bar for different password strengths */
+
 .progress-bar-danger {
     height: 3px !important;
     background-color: #e90f10;

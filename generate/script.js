@@ -9,7 +9,7 @@ const numbers = document.getElementById("numbers");
 	const generatebtn = document.getElementById("generate");
 		const form = document.getElementById("passwordGeneratorForm");
 
-
+// Arrays of character codes for uppercase, lowercase, numbers, and symbols
 const UPPER = available(65, 90);
 const LOWER = available(97, 122);
 const NUM = available(48, 57);
@@ -18,7 +18,7 @@ const SYMBOL = available(33, 47)
   .concat(available(91, 96))
   .concat(available(123, 126));
 
-
+// Function to return an array of character codes from low to high values
 function available(low, high) {
 	const array = [];
 	for (let i = low; i <= high; i++) {
@@ -27,7 +27,7 @@ function available(low, high) {
 	return array;
   }
 
-
+// Function to generate password based on selected options
 let generatePassword = (
 	characterAmount,
 	includeUppercase,
@@ -47,7 +47,7 @@ let generatePassword = (
 	return passwordCharacters.join("");
   };
 
-
+// Event listener to copy generated password to clipboard
 copybtn.addEventListener("click", () => {
 	const textarea = document.createElement("textarea");
 	const passwordToCopy = result.innerText;
@@ -61,7 +61,7 @@ copybtn.addEventListener("click", () => {
 	textarea.remove();
 	alert("Password Copied to Clipboard");
   });
-  
+// Event listener to generate password based on selected options  
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const characterAmount = length.value;
